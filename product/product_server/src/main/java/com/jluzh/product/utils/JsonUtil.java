@@ -3,7 +3,7 @@ package com.jluzh.product.utils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class JsonUtils {
+public class JsonUtil {
     private static ObjectMapper objectMapper = new ObjectMapper();
 
     /**

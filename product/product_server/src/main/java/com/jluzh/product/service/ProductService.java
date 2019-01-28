@@ -1,6 +1,7 @@
 package com.jluzh.product.service;
 
 
+import com.jluzh.product.common.DecreaseStockInput;
 import com.jluzh.product.common.ProductInfoOutput;
 import com.jluzh.product.dataobject.ProductInfo;
 
@@ -20,5 +21,11 @@ public interface ProductService {
      * @return
      */
     List<ProductInfoOutput> findList(List<String> productIdList);
+
+    /**
+     * 扣库存
+     * @param decreaseStockInputList
+     */
+    void decreaseStock(List<DecreaseStockInput> decreaseStockInputList);
 
 }

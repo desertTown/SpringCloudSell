@@ -1,6 +1,7 @@
 package com.jluzh.product.controller;
 
 
+import com.jluzh.product.common.DecreaseStockInput;
 import com.jluzh.product.common.ProductInfoOutput;
 import com.jluzh.product.dataobject.ProductCategory;
 import com.jluzh.product.dataobject.ProductInfo;
@@ -78,6 +79,11 @@ public class ProductController {
     @PostMapping("/listForOrder")
     public List<ProductInfoOutput> listForOrder(@RequestBody List<String> productIdList) {
         return productService.findList(productIdList);
+    }
+
+    @PostMapping("/decreaseStock")
+    public void decreaseStock(@RequestBody List<DecreaseStockInput> decreaseStockInputList) {
+        productService.decreaseStock(decreaseStockInputList);
     }
 
 }
