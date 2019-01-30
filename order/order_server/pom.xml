@@ -37,11 +37,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
         </dependency>
@@ -49,13 +44,11 @@
         <dependency>
             <groupId>com.jluzh</groupId>
             <artifactId>order_common</artifactId>
-            <version>0.0.1</version>
         </dependency>
 
         <dependency>
             <groupId>com.jluzh</groupId>
             <artifactId>product_client</artifactId>
-            <version>0.0.1</version>
         </dependency>
 
         <dependency>

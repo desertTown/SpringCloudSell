@@ -28,6 +28,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <product-client.version>0.0.1</product-client.version>
+        <order-common.version>0.0.1</order-common.version>
     </properties>
 
     <dependencyManagement>
@@ -38,6 +40,16 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.jluzh</groupId>
+                <artifactId>product_client</artifactId>
+                <version>${product-client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jluzh</groupId>
+                <artifactId>order_common</artifactId>
+                <version>${order-common.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
