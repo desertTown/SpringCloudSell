@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/desertTown/config-repo
+          search-paths: sell
+          username:
+          password:
+          basedir: D://config
+      label: master
+# 因为是公开仓库， 所以可以不填用户名和密码
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
