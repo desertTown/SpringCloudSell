@@ -1,3 +1,7 @@
+server:
+  port: 8864
+
+
 spring:
   application:
     name: order
@@ -5,11 +9,17 @@ spring:
     config:
       discovery:
         enabled: true
-        service-id: CONFIG
+        serviceId: config
       label: master
       profile: test
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8765/eureka/
+
+
 # F 版本是默认不开启的， 需要手动开启。  但是不开启好像也是可以正常访问到对应的服务信息的
-feign:
-  hystrix:
-    enabled=true:
+#feign:
+#  hystrix:
+#    enabled=true
