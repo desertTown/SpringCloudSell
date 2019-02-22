@@ -12,6 +12,18 @@ spring:
         serviceId: config
       label: master
       profile: test
+    bus:
+      #Workaround for defect in https://github.com/spring-cloud/spring-cloud-bus/issues/124
+      #id: ->in order to fix config change by webhooks, config server can refresh auto but client cannot refresh config change auto
+      id: ${vcap.application.name:${spring.application.name:application}}:${vcap.application.instance_index:${spring.cloud.config.profile:${local.server.port:${server.port:0}}}}:${vcap.application.instance_id:${random.value}}
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 10.222.38.149
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:
@@ -23,3 +35,12 @@ eureka:
 #feign:
 #  hystrix:
 #    enabled=true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+logging:
+  level:
+    org.springframework.cloud.bus: debug
