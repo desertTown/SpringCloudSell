@@ -1,0 +1,28 @@
+server:
+  port: 8991
+
+spring:
+  application:
+    name: api_gateway
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: config
+      label: master
+      profile: test
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8765/eureka/
+zuul:
+  routes:
+    myProduct:
+      path: /myProduct/**
+      serviceId: product
+      sensitiveHeaders:       #zuul默认会过滤掉cookie相关信息， 如果现在其他服务中传递， 将这个属性设置为空即可
+    #简洁写法
+#    product: /myProduct/**
+  # 禁止某些接口被外界直接访问
+#  ignored-patterns:
+#    - /**/product/list
