@@ -1,0 +1,23 @@
+server:
+  port: 8992
+
+
+spring:
+  application:
+    name: user
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: config
+      label: master
+      profile: test
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8765/eureka/
+
+logging:
+  level:
+    org.springframework.cloud.bus: debug
