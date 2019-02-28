@@ -39,3 +39,17 @@ management:
 logging:
   level:
     org.springframework.cloud.bus: debug
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+    # 指定调用方法的过期时间
+    getProductList:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
