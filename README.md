@@ -1,5 +1,5 @@
 # SpringCloudSell
 
 #### 介绍
-SpringCloudSell
+A project practice with sell using SpringBoot 2.0.3 + SpringCloud Finchley.RELEASE.  include Eureka, Feign, SpringCloudConfig, SpringCloudBus,Zuul, Hystrix,SpringCloud Sleuth, ZipKin,Redis, RabbitMQ
 
