@@ -2,6 +2,6 @@
 
 mvn clean package -DskipTests -U
 
-docker build -t hub.c.163.com/springcloud/config .
+docker build -t registry.cn-shenzhen.aliyuncs.com/deserttown/config:latest .
 
-docker push hub.c.163.com/spring/config
+docker push registry.cn-shenzhen.aliyuncs.com/deserttown/config:latest
