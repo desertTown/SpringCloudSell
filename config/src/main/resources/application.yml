@@ -11,7 +11,7 @@ spring:
           search-paths: sell
           username:
           password:
-          basedir: D://config    #指定本地仓库(将git远程仓库上的文件克隆下来)
+          basedir: /springCloudSell/localConfig    #指定本地仓库(将git远程仓库上的文件克隆下来)
       label: master
 # 因为是公开仓库， 所以可以不填用户名和密码
 # 要是本地仓库的文件改变， 需要调用相关接口。 例如：http://localhost:8080/order-test.yml
@@ -29,7 +29,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://peer1:8765/eureka/
+      defaultZone: http://eureka:8765/eureka/
 management:
   endpoints:
     web:
