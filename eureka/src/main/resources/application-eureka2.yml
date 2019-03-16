@@ -3,11 +3,11 @@ server:
 
 eureka:
   instance:
-    hostname: eureka2
+    hostname: eureka
   client:
     serviceUrl:
-      defaultZone: http://eureka2:8765/eureka/
+      defaultZone: http://eureka:8765/eureka/
 
 spring:
   application:
-    name: eureka2
+    name: eureka
