@@ -15,7 +15,7 @@ spring:
       discovery:
         enabled: true
         serviceId: config
-      label: home
+      label: kubernetes
       profile: test
     bus:
       #Workaround for defect in https://github.com/spring-cloud/spring-cloud-bus/issues/124

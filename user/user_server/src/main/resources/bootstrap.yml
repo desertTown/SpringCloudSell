@@ -10,7 +10,7 @@ spring:
       discovery:
         enabled: true
         serviceId: config
-      label: master
+      label: kubernetes
       profile: test
 
 eureka:
