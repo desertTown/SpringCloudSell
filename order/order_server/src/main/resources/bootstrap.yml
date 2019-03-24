@@ -20,7 +20,7 @@ spring:
       trace:
         enabled: true
   zipkin:
-    base-url: http://192.168.50.2:9411/
+    base-url: http://192.168.50.92:9411/
     sender:
       type: rabbit
   # 默认sleuth 是将信息的百分之10暴露到外部服务中（如Zipkin）， 这里设置成1， 代表将所有信息暴露出去
