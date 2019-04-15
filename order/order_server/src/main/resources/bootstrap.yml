@@ -1,7 +1,6 @@
 server:
   port: 8864
 
-
 spring:
   application:
     name: order
@@ -28,7 +27,11 @@ spring:
     sampler:
       probability: 1
 eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10 #表示eureka client发送心跳给server端的频率，默认为30秒
+    health-check-url-path: /actuator/health #健康检查的地址（依赖spring-boot-starter-actuator）
   client:
+    registryFetchIntervalSeconds: 5 #表示eureka client间隔多久去拉取服务注册信息，默认为30秒
     serviceUrl:
       defaultZone: http://eureka1:8765/eureka/,http://eureka2:8769/eureka/
   instance:
@@ -44,6 +47,9 @@ management:
     web:
       exposure:
         include: "*"
+  endpoint:
+    health:
+      show-details: always
 logging:
   level:
     org.springframework.cloud.bus: debug
