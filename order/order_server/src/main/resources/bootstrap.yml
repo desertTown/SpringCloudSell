@@ -30,7 +30,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://peer1:8765/eureka/
+      defaultZone: http://eureka1:8765/eureka/, http://eureka2:8769/eureka/
 
 
 # F 版本是默认不开启的， 需要手动开启。  但是不开启好像也是可以正常访问到对应的服务信息的
