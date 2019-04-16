@@ -9,7 +9,7 @@ spring:
       discovery:
         enabled: true
         serviceId: config
-      label: master
+      label: home
       profile: test
     bus:
       #Workaround for defect in https://github.com/spring-cloud/spring-cloud-bus/issues/124
@@ -19,7 +19,7 @@ spring:
       trace:
         enabled: true
   zipkin:
-    base-url: http://10.222.38.149:9411/
+    base-url: http://192.168.50.2:9411/
     sender:
       type: rabbit
   # 默认sleuth 是将信息的百分之10暴露到外部服务中（如Zipkin）， 这里设置��代表将所有信息暴露出�
@@ -33,7 +33,7 @@ eureka:
   client:
     registryFetchIntervalSeconds: 5 #表示eureka client间隔多久去拉取服务注册信息，默认�0�
     serviceUrl:
-      defaultZone: http://eureka1:8765/eureka/, http://eureka2:8769/eureka/
+      defaultZone: http://eureka1:8765/eureka/,http://eureka2:8769/eureka/
   instance:
     prefer-ip-address: true
 
