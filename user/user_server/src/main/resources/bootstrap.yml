@@ -10,13 +10,13 @@ spring:
       discovery:
         enabled: true
         serviceId: config
-      label: master
+      label: home
       profile: test
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://eureka1:8765/eureka/, http://eureka2:8769/eureka/
+      defaultZone: http://eureka1:8765/eureka/,http://eureka2:8769/eureka/
 
 logging:
   level:

@@ -22,7 +22,7 @@ spring:
     base-url: http://192.168.50.2:9411/
     sender:
       type: rabbit
-  # 默认sleuth 是将信息的百分之10暴露到外部服务中（如Zipkin）， 
+  # 默认sleuth 是将信息的百分之10暴露到外部服务中（如Zipkin），
   sleuth:
     sampler:
       probability: 1

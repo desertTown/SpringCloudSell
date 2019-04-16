@@ -10,7 +10,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka1:8765/eureka/, http://eureka2:8769/eureka/
+      defaultZone: http://eureka1:8765/eureka/,http://eureka2:8769/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 10
     health-check-url-path: /actuator/health

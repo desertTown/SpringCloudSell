@@ -1,0 +1,87 @@
+version: "3.4"
+services:
+
+  eureka-service:
+    image: registry.cn-shenzhen.aliyuncs.com/messi/eureka:latest
+    deploy:
+      endpoint_mode: dnsrr
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: "512M"
+
+  config-service:
+    image: registry.cn-shenzhen.aliyuncs.com/messi/config:latest
+    deploy:
+      endpoint_mode: dnsrr
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: "128M"
+    depends_on:
+      - eureka-service
+
+  order-service:
+    image: registry.cn-shenzhen.aliyuncs.com/messi/order:latest
+    deploy:
+      endpoint_mode: dnsrr
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: "512M"
+    depends_on:
+      - product-service
+      - eureka-service
+      - config-service
+
+  product-service:
+    image: registry.cn-shenzhen.aliyuncs.com/messi/product:latest
+    deploy:
+      endpoint_mode: dnsrr
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: "512M"
+    depends_on:
+      - user-service
+      - eureka-service
+      - config-service
+
+  api-gateway-service:
+    image: registry.cn-shenzhen.aliyuncs.com/messi/api-gateway:latest
+    deploy:
+      endpoint_mode: vip
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: "512M"
+    ports:
+      - "8991:8991"
+    depends_on:
+      - product-service
+      - order-service
+      - eureka-service
+      - config-service
+
+  admin-service:
+    image: registry.cn-shenzhen.aliyuncs.com/messi/api-gateway:latest
+    deploy:
+      endpoint_mode: vip
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: "512M"
+    ports:
+      - "5000:5000"
+    depends_on:
+      - product-service
+      - order-service
+      - eureka-service
+      - config-service
+      - api-gateway-service
+
+
+networks:
+  default:
+    external:
+      name: evan-overlay
