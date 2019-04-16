@@ -2,6 +2,6 @@
 
 mvn clean package -DskipTests -U
 
-docker build -t registry.cn-shenzhen.aliyuncs.com/deserttown/order:latest .
+docker build -t registry.cn-shenzhen.aliyuncs.com/messi/order:latest .
 
-docker push registry.cn-shenzhen.aliyuncs.com/deserttown/order:latest
+docker push registry.cn-shenzhen.aliyuncs.com/messi/order:latest
