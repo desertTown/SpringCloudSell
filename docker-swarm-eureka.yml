@@ -1,0 +1,41 @@
+version: "3.4"
+services:
+
+  eureka1:
+    image: registry.cn-shenzhen.aliyuncs.com/messi/eureka:latest
+    deploy:
+      endpoint_mode: vip
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: "512M"
+    ports:
+      - "8765:8765"
+    environment:
+      - spring.profiles.active=eureka1
+  eureka2:
+    image: registry.cn-shenzhen.aliyuncs.com/messi/eureka:latest
+    deploy:
+      endpoint_mode: vip
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: "512M"
+    ports:
+      - "8769:8769"
+    environment:
+      - spring.profiles.active=eureka2
+  config-service:
+    image: registry.cn-shenzhen.aliyuncs.com/messi/config:latest
+    deploy:
+      endpoint_mode: dnsrr
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: "128M"
+
+
+networks:
+  default:
+    external:
+      name: evan-overlay

@@ -1,42 +1,6 @@
 version: "3.4"
 services:
 
-  eureka1-service:
-    image: registry.cn-shenzhen.aliyuncs.com/messi/eureka:latest
-    deploy:
-      endpoint_mode: vip
-      resources:
-        limits:
-          cpus: "0.2"
-          memory: "512M"
-    ports:
-      - "8765:8765"
-    environment:
-      - spring.profiles.active=eureka1
-  eureka2-service:
-    image: registry.cn-shenzhen.aliyuncs.com/messi/eureka:latest
-    deploy:
-      endpoint_mode: vip
-      resources:
-        limits:
-          cpus: "0.2"
-          memory: "512M"
-    ports:
-      - "8769:8769"
-    environment:
-      - spring.profiles.active=eureka2
-
-  config-service:
-    image: registry.cn-shenzhen.aliyuncs.com/messi/config:latest
-    deploy:
-      endpoint_mode: dnsrr
-      resources:
-        limits:
-          cpus: "0.2"
-          memory: "128M"
-    depends_on:
-      - eureka-service
-
   order-service:
     image: registry.cn-shenzhen.aliyuncs.com/messi/order:latest
     deploy:
@@ -47,7 +11,6 @@ services:
           memory: "512M"
     depends_on:
       - product-service
-      - eureka-service
       - config-service
 
   product-service:
@@ -60,7 +23,6 @@ services:
           memory: "512M"
     depends_on:
       - user-service
-      - eureka-service
       - config-service
 
   api-gateway-service:
@@ -76,11 +38,10 @@ services:
     depends_on:
       - product-service
       - order-service
-      - eureka-service
       - config-service
 
   admin-service:
-    image: registry.cn-shenzhen.aliyuncs.com/messi/api-gateway:latest
+    image: registry.cn-shenzhen.aliyuncs.com/messi/admin:latest
     deploy:
       endpoint_mode: vip
       resources:
@@ -92,7 +53,6 @@ services:
     depends_on:
       - product-service
       - order-service
-      - eureka-service
       - config-service
       - api-gateway-service
 
