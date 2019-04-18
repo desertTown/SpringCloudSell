@@ -8,7 +8,7 @@ services:
       resources:
         limits:
           cpus: "0.2"
-          memory: "512M"
+          memory: "700M"
     depends_on:
       - product-service
       - config-service
@@ -20,7 +20,7 @@ services:
       resources:
         limits:
           cpus: "0.2"
-          memory: "512M"
+          memory: "700M"
     depends_on:
       - user-service
       - config-service
@@ -32,7 +32,7 @@ services:
       resources:
         limits:
           cpus: "0.2"
-          memory: "512M"
+          memory: "700M"
     ports:
       - "8991:8991"
     depends_on:
@@ -47,7 +47,7 @@ services:
       resources:
         limits:
           cpus: "0.2"
-          memory: "512M"
+          memory: "700M"
     ports:
       - "5000:5000"
     depends_on:

@@ -8,7 +8,7 @@ services:
       resources:
         limits:
           cpus: "0.2"
-          memory: "512M"
+          memory: "700M"
     ports:
       - "8765:8765"
     environment:
@@ -20,7 +20,7 @@ services:
       resources:
         limits:
           cpus: "0.2"
-          memory: "512M"
+          memory: "700M"
     ports:
       - "8769:8769"
     environment:
@@ -32,7 +32,7 @@ services:
       resources:
         limits:
           cpus: "0.2"
-          memory: "128M"
+          memory: "700M"
 
 
 networks:
