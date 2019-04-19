@@ -13,8 +13,8 @@ spring:
           password:
 #          basedir: E:\material\workSpace\backend\microservice\SpringCloudSell\config\res    #指定本地仓库(将git远程仓库上的文件克隆下来)
           default-label: home
-# 因为是公开仓库， 所以可以不填用户名和密码
-# 要是本地仓库的文件改变， 需要调用相关接口。 例如：http://localhost:8080/order-test.yml
+# 因为是公开仓库�所以可以不填用户名和密�
+# 要是本地仓库的文件改变， 需要调用相关接口�例如：http://localhost:8080/order-test.yml
     bus:
       enabled: true
       trace:

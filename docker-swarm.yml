@@ -1,0 +1,63 @@
+version: "3.4"
+services:
+
+  order-service:
+    image: registry.cn-shenzhen.aliyuncs.com/messi/order:latest
+    deploy:
+      endpoint_mode: dnsrr
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: "700M"
+    depends_on:
+      - product-service
+      - config-service
+
+  product-service:
+    image: registry.cn-shenzhen.aliyuncs.com/messi/product:latest
+    deploy:
+      endpoint_mode: dnsrr
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: "700M"
+    depends_on:
+      - user-service
+      - config-service
+
+  api-gateway-service:
+    image: registry.cn-shenzhen.aliyuncs.com/messi/api-gateway:latest
+    deploy:
+      endpoint_mode: vip
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: "700M"
+    ports:
+      - "8991:8991"
+    depends_on:
+      - product-service
+      - order-service
+      - config-service
+
+  admin-service:
+    image: registry.cn-shenzhen.aliyuncs.com/messi/admin:latest
+    deploy:
+      endpoint_mode: vip
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: "700M"
+    ports:
+      - "5000:5000"
+    depends_on:
+      - product-service
+      - order-service
+      - config-service
+      - api-gateway-service
+
+
+networks:
+  default:
+    external:
+      name: evan-overlay
