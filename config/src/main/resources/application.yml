@@ -11,17 +11,17 @@ spring:
           search-paths: sell
           username:
           password:
-#          basedir: E:\material\workSpace\backend\microservice\SpringCloudSell\config\res    #æŒ‡å®šæœ¬åœ°ä»“åº“(å°†gitè¿œç¨‹ä»“åº“ä¸Šçš„æ–‡ä»¶å…‹éš†ä¸‹æ¥)
+#          basedir: E:\material\workSpace\backend\microservice\SpringCloudSell\config\res    #指定本地仓库(将git远程仓库上的文件克隆下来
           default-label: kubernetes
 #          force-pull: true     # Cannot pull from remote https://github.com/desertTown/config-repo.git, the working tree is not clean.
-# å› ä¸ºæ˜¯å…¬å¼€ä»“åº“ï¼Œ æ‰€ä»¥å¯ä»¥ä¸å¡«ç”¨æˆ·åå’Œå¯†ç 
-# è¦æ˜¯æœ¬åœ°ä»“åº“çš„æ–‡ä»¶æ”¹å˜ï¼Œ éœ€è¦è°ƒç”¨ç›¸å…³æŽ¥å£ã€‚ ä¾‹å¦‚ï¼šhttp://localhost:8080/order-test.yml
+# 因为是公开仓库， 所以可以不填用户名和密码
+# 要是本地仓库的文件改变， 需要调用相关接口。 例如 http://localhost:8080/order-test.yml
     bus:
       enabled: true
       trace:
         enabled: true
   rabbitmq:
-    host: 192.168.50.92
+    host: 192.168.50.9
     port: 5672
     username: guest
     password: guest
