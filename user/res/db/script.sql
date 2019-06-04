@@ -9,3 +9,9 @@ CREATE TABLE `user_info` (
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
   PRIMARY KEY (`id`)
 );
+
+INSERT INTO user_info(id, username, PASSWORD, openid, role, create_time, update_time)
+VALUES (1111, 'evan', 123, 'abc', '1',  '2019-02-27 19:38:48', '2019-02-27 19:38:48');
+
+INSERT INTO user_info(id, username, PASSWORD, openid, role, create_time, update_time)
+VALUES (2222, 'messi', 123, 'xyz', '2',  '2019-02-27 19:38:58', '2019-02-27 19:38:58')
