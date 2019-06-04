@@ -2,45 +2,29 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-cloud-sell</artifactId>
+        <groupId>com.jluzh</groupId>
+        <version>0.0.1</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>com.jluzh</groupId>
-    <artifactId>user</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1</version>
     <modules>
+        <module>user-client</module>
         <module>user_server</module>
-        <module>user_client</module>
-        <module>user_common</module>
+        <module>user-common</module>
+
     </modules>
 
-    <name>user</name>
-    <description>Demo project for Spring Cloud</description>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.3.RELEASE</version>
-        <relativePath/>
-    </parent>
+    <artifactId>user</artifactId>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
         <user-common.version>0.0.1</user-common.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
             <dependency>
                 <groupId>com.jluzh</groupId>
                 <artifactId>user_common</artifactId>
@@ -48,5 +32,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
 </project>

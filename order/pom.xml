@@ -2,32 +2,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-cloud-sell</artifactId>
+        <groupId>com.jluzh</groupId>
+        <version>0.0.1</version>
+    </parent>
+    <packaging>pom</packaging>
+    <modules>
+        <module>order-client</module>
+        <module>order-common</module>
+        <module>order-server</module>
+    </modules>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.jluzh</groupId>
     <artifactId>order</artifactId>
-    <packaging>pom</packaging>
-    <version>0.0.1</version>
-    <modules>
-        <module>order_common</module>
-        <module>order_client</module>
-        <module>order_server</module>
-    </modules>
-    <name>order</name>
-    <description>Demo project for Spring Cloud</description>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.3.RELEASE</version>
-        <relativePath/>
-    </parent>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
         <product-client.version>0.0.1</product-client.version>
         <order-common.version>0.0.1</order-common.version>
     </properties>
@@ -53,5 +43,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
 </project>
