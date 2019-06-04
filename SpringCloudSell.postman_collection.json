@@ -1,0 +1,486 @@
+{
+	"info": {
+		"name": "SpringCloudSell",
+		"_postman_id": "5deb29fa-5e14-2e01-f414-639e11174b5c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateOrder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "张三",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "18868822111",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "滴滴\n",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "openid",
+							"value": "ew3euwhd7sjw9diwkq\n",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "items",
+							"value": "[{\n    productId: \"157875196366160022\",\n    productQuantity: 7\n}]",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8864/order/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8864",
+					"path": [
+						"order",
+						"create"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "ProductList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8762/product/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"product",
+						"list"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "configEnv",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8864/env/print",
+					"host": [
+						"localhost"
+					],
+					"port": "8864",
+					"path": [
+						"env",
+						"print"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "RefrreshBus",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:80/actuator/bus-refresh",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"actuator",
+						"bus-refresh"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "OrderPrintGirl",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8864/girl/print",
+					"host": [
+						"localhost"
+					],
+					"port": "8864",
+					"path": [
+						"girl",
+						"print"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "ProductPrintGirl",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8762/girl/print",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"girl",
+						"print"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "decreaseStock",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"productId\":\"157875196366160022\", \"productQuantity\":1}]"
+				},
+				"url": {
+					"raw": "localhost:8762/product/decreaseStock",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"product",
+						"decreaseStock"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "ApiGateWay->ProductList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8991/myProduct/product/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8991",
+					"path": [
+						"myProduct",
+						"product",
+						"list"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "完结订单",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8864/order/finish?orderId=1548828273996739075",
+					"host": [
+						"localhost"
+					],
+					"port": "8864",
+					"path": [
+						"order",
+						"finish"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "1548828273996739075",
+							"equals": true
+						}
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "sellerLogin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8992/login/seller?openid=xyz",
+					"host": [
+						"localhost"
+					],
+					"port": "8992",
+					"path": [
+						"login",
+						"seller"
+					],
+					"query": [
+						{
+							"key": "openid",
+							"value": "xyz",
+							"equals": true
+						}
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "ApiGateWat->OrderCreate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "openid=abc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Messi",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "18868822111",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "china",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "openid",
+							"value": "ew3euwhd7sjw9diwkq",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "items",
+							"value": "[{\n    productId: \"157875196366160022\",\n    productQuantity: 7\n}]",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8991/order/order/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8991",
+					"path": [
+						"order",
+						"order",
+						"create"
+					],
+					"query": [
+						{
+							"key": "Content-type",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "buyerLogin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8992/login/seller?openid=abc",
+					"host": [
+						"localhost"
+					],
+					"port": "8992",
+					"path": [
+						"login",
+						"seller"
+					],
+					"query": [
+						{
+							"key": "openid",
+							"value": "abc",
+							"equals": true
+						}
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "ApiGateway->OrderFinish",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=7e01bf2e-1e22-45ab-ab64-19b863305983",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "orderId",
+							"value": "1551282744829261686",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8991/order/order/finish",
+					"host": [
+						"localhost"
+					],
+					"port": "8991",
+					"path": [
+						"order",
+						"order",
+						"finish"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "服务熔断Hystryx",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8864/getProductInfoList?number=157",
+					"host": [
+						"localhost"
+					],
+					"port": "8864",
+					"path": [
+						"getProductInfoList"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "157",
+							"equals": true
+						}
+					]
+				},
+				"description": null
+			},
+			"response": []
+		}
+	]
+}
