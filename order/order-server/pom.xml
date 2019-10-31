@@ -43,12 +43,12 @@
 
         <dependency>
             <groupId>com.jluzh</groupId>
-            <artifactId>order_common</artifactId>
+            <artifactId>order-common</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.jluzh</groupId>
-            <artifactId>product_client</artifactId>
+            <artifactId>product-client</artifactId>
         </dependency>
 
         <dependency>

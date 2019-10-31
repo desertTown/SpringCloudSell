@@ -43,7 +43,7 @@
 
         <dependency>
             <groupId>com.jluzh</groupId>
-            <artifactId>product_common</artifactId>
+            <artifactId>product-common</artifactId>
         </dependency>
 
         <dependency>

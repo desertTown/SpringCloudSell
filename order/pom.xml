@@ -33,12 +33,12 @@
             </dependency>
             <dependency>
                 <groupId>com.jluzh</groupId>
-                <artifactId>product_client</artifactId>
+                <artifactId>product-client</artifactId>
                 <version>${product-client.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.jluzh</groupId>
-                <artifactId>order_common</artifactId>
+                <artifactId>order-common</artifactId>
                 <version>${order-common.version}</version>
             </dependency>
         </dependencies>
